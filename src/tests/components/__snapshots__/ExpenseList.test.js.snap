@@ -16,7 +16,7 @@ exports[`render ExpenseList with expenses 1`] = `
     description="Candy"
     id="1"
     key="1"
-    note=""
+    note="I like candy"
   />
   <ExpenseListItem
     amount={15000}
@@ -24,7 +24,7 @@ exports[`render ExpenseList with expenses 1`] = `
     description="Luxury Bag"
     id="2"
     key="2"
-    note=""
+    note="This bag is so cool"
   />
   <ExpenseListItem
     amount={4500}
@@ -32,7 +32,7 @@ exports[`render ExpenseList with expenses 1`] = `
     description="Online Shopping"
     id="3"
     key="3"
-    note=""
+    note="Today is payday!"
   />
 </div>
 `;

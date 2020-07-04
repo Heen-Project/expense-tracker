@@ -1,0 +1,8 @@
+const actionMode = {
+    ADD_EXPENSE: 'ADD_EXPENSE',
+    REMOVE_EXPENSE: 'REMOVE_EXPENSE',
+    EDIT_EXPENSE: 'EDIT_EXPENSE',
+    SET_EXPENSES: 'SET_EXPENSES',
+}
+
+export { actionMode }

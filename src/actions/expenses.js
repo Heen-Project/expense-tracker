@@ -1,11 +1,5 @@
-import { v4 as uuidv4 } from 'uuid'
 import database from '../firebase/firebase'
-
-const actionMode = {
-    ADD_EXPENSE: 'ADD_EXPENSE',
-    REMOVE_EXPENSE: 'REMOVE_EXPENSE',
-    EDIT_EXPENSE: 'EDIT_EXPENSE',
-}
+import { actionMode } from '../utils/expenses'
 
 const addExpense = (expense) => ({
     type: actionMode.ADD_EXPENSE,
@@ -37,10 +31,55 @@ const removeExpense = ({
     id
 })
 
+const startRemoveExpense = ({ id }) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).remove().then(() => {
+            dispatch(removeExpense({ id }))
+        })
+    }
+}
+
+
 const editExpense = (id, updates) => ({
     type: actionMode.EDIT_EXPENSE,
     id,
     updates
 })
 
-export { addExpense, removeExpense, editExpense, startAddExpense }
+const startEditExpense = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).update(updates).then(() => {
+            dispatch(editExpense(id, updates))
+        })
+    }
+}
+
+const setExpenses = (expenses) => ({
+    type: actionMode.SET_EXPENSES,
+    expenses
+})
+
+const startSetExpenses = () => {
+    return (dispatch) => {
+        return database.ref('expenses').once('value').then((snapshot) => {
+            const expenses = []
+            snapshot.forEach((childSnapshot) => {
+                expenses.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                })
+            })
+            dispatch(setExpenses(expenses))
+        })
+    }
+}
+
+export { addExpense, 
+    startAddExpense, 
+    removeExpense, 
+    startRemoveExpense, 
+    editExpense, 
+    startEditExpense, 
+    setExpenses,
+    startSetExpenses
+}

@@ -1,8 +1,4 @@
-const actionMode = {
-    ADD_EXPENSE: 'ADD_EXPENSE',
-    REMOVE_EXPENSE: 'REMOVE_EXPENSE',
-    EDIT_EXPENSE: 'EDIT_EXPENSE',
-}
+import { actionMode } from '../utils/expenses'
 
 const expensesReducerDefaultState = []
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
@@ -25,6 +21,8 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
                     return expense
                 } 
             })
+        case actionMode.SET_EXPENSES: 
+            return action.expenses
         default: 
             return state
     }
