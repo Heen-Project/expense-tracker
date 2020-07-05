@@ -1,0 +1,15 @@
+.loader {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $off-white;
+}
+
+.loader__image{
+    object-fit: none;
+    border-radius: 100%;
+    height: 20rem;
+    width: 20rem;
+}

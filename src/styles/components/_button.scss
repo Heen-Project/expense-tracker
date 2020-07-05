@@ -1,0 +1,46 @@
+.button {
+    background: $google-green;
+    color: $off-white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: $font-size-large;
+    padding: $s-size $m-size;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.button--link {
+    background: none;
+}
+
+.button--secondary {
+    background: $google-red;
+}
+
+.button--login {
+    background: $light-grey;
+    color: $dark-grey;
+}
+
+.button--login-google-sign-in-img {
+    width: 20px;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+}
+
+.button-container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    .button {
+        width: 35%;
+        @media (max-width: $desktop-breakpoint) {
+            width: 100%;
+        }
+    }
+}

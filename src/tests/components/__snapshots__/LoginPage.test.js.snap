@@ -1,9 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render LoginPage 1`] = `
-<div>
-  <button>
-    Login
-  </button>
+<div
+  className="box-layout"
+>
+  <div
+    className="box-layout__box"
+  >
+    <h1
+      className="box-layout__title"
+    >
+      Expense Tracker
+    </h1>
+    <p>
+      Let's monitor your expenses from today!
+    </p>
+    <button
+      className="button button--login"
+    >
+      <img
+        className="button--login-google-sign-in-img"
+        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+      />
+       Log in with Google
+    </button>
+    <p
+      style={
+        Object {
+          "fontSize": 9,
+          "fontWeight": 300,
+          "marginTop": "10px",
+        }
+      }
+    >
+      Please enable third-party cookies to use the app
+    </p>
+  </div>
 </div>
 `;
